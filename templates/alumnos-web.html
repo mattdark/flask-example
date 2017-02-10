@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/style.css') }}">
+    <title>IUDM</title>
+  </head>
+  <body>
+  <section id="content2">
+    <div class="Table">
+      <div class="Title">
+        <p>Alumnos</p>
+      </div>
+      <div class="Heading">
+        <div class="Cell">
+          <p>Nombre</p>
+        </div>
+        <div class="Cell">
+          <p>Apellido Paterno</p>
+        </div>
+        <div class="Cell">
+          <p>Apellido Materno</p>
+        </div>
+      </div>
+      {% for (nombre, ap_paterno, ap_materno) in cursor  %}
+          <div class="Row">
+            <div class="Cell">
+              <p> {% print("{}").format(nombre) %} </p>
+            </div>
+            <div class="Cell">
+              <p> {% print("{}").format(ap_paterno) %} </p>
+            </div>
+            <div class="Cell">
+              <p> {% print("{}").format(ap_materno)  %} </p>
+            </div>
+          </div>
+      {% endfor  %}
+    </div>
+  </section>
+  </body>
+</html>
