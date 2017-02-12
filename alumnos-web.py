@@ -5,7 +5,7 @@ from flask import render_template
 app = Flask(__name__)
 
 def connect():
-    mariadb_connection = mariadb.connect(user='root', passwd = '', db = '')
+    mariadb_connection = mariadb.connect(user='root', passwd = '', db = 'escuela')
     return mariadb_connection
 
 @app.route("/")
